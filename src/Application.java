@@ -5,6 +5,10 @@ interface Animal {
         System.out.println("Zwierze idzie spac");
     }
 
+    default void eat() {
+        System.out.println("Zwierze zaczyna jesc");
+    }
+
     static void endOfDay() {
         System.out.println("Dzien się skonczyl, zwierzeta ida spac");
     }
@@ -22,16 +26,43 @@ class Cat implements Animal {
     }
 }
 
+class Bird implements Animal {
+    public void sound() {
+        System.out.println("Tweet Tweet!");
+    }
+}
+
+class Cow implements Animal {
+    public void sound() {
+        System.out.println("Moo Moo!");
+    }
+}
+
+
 public class Application {
     public static void main(String[] args) {
         Dog d1 = new Dog();
-        Cat c1 = new Cat();
-
-        d1.sound();
-        c1.sound();
-
-        d1.sleep();
-        c1.sleep();
+        Cat cat1 = new Cat();
+        Bird b1 = new Bird();
+        Cow cow2 = new Cow();
+        System.out.println("---------");
+            d1.sound();
+            cat1.sound();
+        System.out.println("---------");
+            d1.sleep();
+            cat1.sleep();
+        System.out.println("---------");
+            b1.sound();
+            cow2.sound();
+        System.out.println("---------");
+            b1.sleep();
+            cow2.sleep();
+        System.out.println("---------");
+            d1.eat();
+            cat1.eat();
+            b1.eat();
+            cow2.eat();
+        System.out.println("---------");
 
         Animal.endOfDay();
     }
