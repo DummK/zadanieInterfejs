@@ -13,12 +13,11 @@ interface Animal {
         System.out.println("Dzien się skonczyl, zwierzeta ida spac");
     }
 }
-
 interface Vehicle {
     void start();
     void stop();
 
-    default void feulUp() {
+    default void fuelUp() {
         System.out.println("Tankuje pojazd");
     }
 
@@ -105,8 +104,8 @@ public class Application {
             car1.stop();
             m1.stop();
         System.out.println("---------");
-            car1.feulUp();
-            m1.feulUp();
+            car1.fuelUp();
+            m1.fuelUp();
         System.out.println("---------");
 
         Vehicle.service();
